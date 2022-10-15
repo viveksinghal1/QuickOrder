@@ -1,0 +1,18 @@
+<div class="container-fluid p-0 d-flex align-items-center justify-content-center position-relative">
+    <div class="background-primary w-50 mh-100 text-light">
+        <div *ngIf="isSignIn" class="d-flex flex-column justify-content-center mh-100 p-4">
+            <div class="display-5"><strong>Welcome Back !!</strong></div>
+            <div><small>Sign in and start where you left...</small></div>
+        </div>
+        <div *ngIf="!isSignIn" class="d-flex flex-column justify-content-center mh-100 p-4">
+            <div class="display-5"><strong>Welcome to QuickOrder !!</strong></div>
+            <div><small>Register and order exciting products at reasonable prices...</small></div>
+        </div>
+    </div>
+
+    <div class="w-50 mh-100">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div id="arrow" class="bg-light"></div>
+</div>

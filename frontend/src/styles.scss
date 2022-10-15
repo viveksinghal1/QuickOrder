@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+$primary:       #19aec2;
+
+$theme-colors: (
+  "primary":    #19aec2,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+.btn.btn-outline-primary:hover {
+    color: white;
+}
+
+
+.container-fluid {
+    min-height: 100vh;
+}
+
+.btn, .form-control {
+    border-width: 0.125rem;
+}
+
+.background-primary {
+    background-color: #19aec2;
+}
+
+.mh-100 {
+    min-height: 100vh !important;
+}
+
