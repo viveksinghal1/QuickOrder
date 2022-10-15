@@ -13,8 +13,7 @@ const userRoutes = require("./routes/user");
 const orderRoutes = require("./routes/order");
 dotenv.config();
 
-// const url = process.env.DATABASEURL || "mongodb://localhost:27017/quick_order";
-const url = "mongodb+srv://vivek:vivek456789@cluster0.lwzu5xi.mongodb.net/?retryWrites=true&w=majority";
+const url = process.env.DATABASEURL || "mongodb://localhost:27017/quick_order";
 
 mongoose.connect(url, {
     useNewUrlParser: true,
