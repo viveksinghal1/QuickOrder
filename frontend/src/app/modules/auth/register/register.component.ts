@@ -34,14 +34,15 @@ export class RegisterComponent implements OnInit {
     let result = "";
     let errors = this.regForm.get(field).errors;
     let element = this.regForm.get(field);
+    
     if (element.touched && errors['required']) {
       result = 'Field ' + field + " is required";
-    }
-    else if (element.touched && errors['minlength']) {
+    } else if (element.touched && errors['minlength']) {
       result = field + " must be at least " + minlength + " characters long";
     } else if (element.touched && errors['email']) {
       result = 'Email should in abc@abc.com form';
     }
+
     return result;
   }
 
