@@ -27,16 +27,6 @@ export class AuthService {
 
   }
 
-  validateUsername(username: any): Observable<any> {
-    return this.http.get<any>(environment.api_url+"/users/checkusername/?username="+username)
-    .pipe(catchError(this.errorHandler));
-  }
-
-  validateEmail(email: any): Observable<any> {
-    return this.http.get<any>(environment.api_url+"/users/checkemail/?email="+email)
-    .pipe(catchError(this.errorHandler));
-  }
-
   isLoggedIn() {
     return !!this.getToken();
   }
