@@ -60,10 +60,12 @@ export class LoginComponent implements OnInit {
         res => {
           this.toastr.success("Successfully signed in", "Success");
           localStorage.setItem('token', res.idToken);
+          localStorage.setItem('name', res.name);
+          localStorage.setItem('email', res.email);
           this._router.navigate(['/products']);
         },
         err => {
-          this.toastr.success(err.error, "Error");
+          this.toastr.error(err.error, "Error");
           this.reset();
         }
       )

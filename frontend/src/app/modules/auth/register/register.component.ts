@@ -59,6 +59,9 @@ export class RegisterComponent implements OnInit {
       this._authService.register(this.regForm.value)
       .subscribe(
         res => {
+          localStorage.setItem("token", res.idToken);
+          localStorage.setItem("email", res.email);
+          localStorage.setItem("name", res.name);
           this.toastr.success("Successfully registered", "Success");
           this._router.navigate(['/products']);
         },
