@@ -7,7 +7,7 @@ let router = express.Router();
 const User = require("../models/user");
 const seedDB = require("../seed");
 
-const RSA_PRIVATE_KEY = fs.readFileSync("../private.key");
+const RSA_PRIVATE_KEY = fs.readFileSync("./private.key");
 
 router.post("/register", async function(req, res){
     try {
