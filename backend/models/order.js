@@ -9,7 +9,10 @@ const orderSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    isCancelled: Boolean 
+    orderedOn: {
+        type: Date,
+        default: new Date()
+    }
 });
 
 module.exports = mongoose.model("Order", orderSchema);

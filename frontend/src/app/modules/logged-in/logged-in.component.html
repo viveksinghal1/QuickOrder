@@ -1,0 +1,30 @@
+<div class="container-fluid mh-100 p-0">
+    <nav class="navbar navbar-expand-md bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" routerLink="/home">QuickOrder</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav d-md-flex w-100 justify-content-between">
+              <a class="nav-link" routerLink="/products" routerLinkActive="active">Catalogue</a>
+              <div class="d-none d-md-flex">
+                <a class="nav-link" routerLink="/orders" routerLinkActive="active">Orders</a>
+                <a class="nav-link float-right" [routerLink]="" style="cursor: pointer;"
+                (click)="logout()">Logout</a>
+              </div>
+              <a class="nav-link d-md-none" routerLink="/orders" routerLinkActive="active">Orders</a>
+              <a class="nav-link d-md-none float-right" [routerLink]=""
+              (click)="logout()" style="cursor: pointer;">Logout</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="row">
+          <div class="col-12">
+              <router-outlet></router-outlet>
+          </div>
+      </div>
+
+</div>

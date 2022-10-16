@@ -1,0 +1,41 @@
+<div class="container px-4 py-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-xl-8">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item" *ngFor="let order of orders; let i=index">
+                    <h2 class="accordion-header" id="heading-{{i}}">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse-'+i" aria-expanded="true" [attr.aria-controls]="'collapse-'+i">
+                        {{order.product.name}}
+                    </button>
+                    </h2>
+                    <div id="collapse-{{i}}" class="accordion-collapse collapse show" [attr.aria-labelledby]="'heading-'+i" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="card mb-3 border-0">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img [src]="order.product.image" class="img-fluid rounded-start" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h6 class="card-title text-muted">Order ID: {{order._id}}</h6>
+                                  <p class="card-text">{{order.product.desc}}</p>
+                                  <p class="card-text"><small class="text-muted">{{order.product.price}}</small></p>
+                                  <p class="card-text"><small class="text-muted">
+                                      <span class="text-dark">Ordered On:</span> 
+                                      &nbsp;{{order.orderedOn | date: 'YYYY-mm-dd'}}</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="!orders || orders.length == 0" class="w-100 text-center">
+                <div class="lead">No orders yet. Please check the catalogue</div>
+            </div>
+
+        </div>
+    </div>
+</div>

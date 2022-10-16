@@ -17,13 +17,13 @@ $theme-colors: (
 );
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 
-.btn.btn-outline-primary:hover {
-    color: white;
+* {
+    outline: none !important;
+    box-shadow: none !important;
 }
 
-
-.container-fluid {
-    min-height: 100vh;
+.btn.btn-outline-primary:hover {
+    color: white;
 }
 
 .btn, .form-control {
@@ -36,5 +36,11 @@ $theme-colors: (
 
 .mh-100 {
     min-height: 100vh !important;
+}
+
+@media screen and (min-width: 768px) {
+    .mh-md-100 {
+        min-height: 100vh !important;
+    }
 }
 

@@ -1,0 +1,30 @@
+<div class="container px-3 py-5">
+    <div class="row m-0">
+        <div class="col-12 col-md-4 col-md-3" *ngFor="let prod of products">
+            <div class="card" style="width: 100%;">
+                <img [src]="prod.image" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title">{{prod.name}}</h5>
+                        <h5 class="text-lead">{{prod.price}}</h5>
+                    </div>
+                  <p class="card-text">
+                      {{prod.desc}}
+                  </p>
+                  <a *ngIf="!isOrdered(prod._id)" [routerLink]="" class="btn btn-outline-dark"
+                  (click)="order(prod._id)">Order it</a>
+
+                  <a *ngIf="isOrdered(prod._id)" [routerLink]="" class="btn btn-success disabled"
+                  disabled="true">Ordered</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-12" *ngIf="fetchingProducts">
+            <div class="w-100 d-flex justify-content-center">
+                <div class="spinner-border text-dark" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

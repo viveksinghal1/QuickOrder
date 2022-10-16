@@ -2,6 +2,7 @@ const express = require("express");
 let router = express.Router();
 const Product = require("../models/product");
 const middleware = require('../middleware/index');
+const seedDB = require("../seed");
 
 router.get('/', middleware.verifyToken, async function(req, res){
     try {
