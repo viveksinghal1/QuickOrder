@@ -38,20 +38,15 @@ export class AuthService {
   }
 
   isLoggedIn() {
-    return !!this.getToken()  && !!this.getUsername();
+    return !!this.getToken();
   }
 
   getToken() {
     return localStorage.getItem('token');
   }
 
-  getUsername() {
-    return localStorage.getItem('username');
-  }
-
   logoutUser() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('username');
+    localStorage.clear();
     this._router.navigate(['/login']);
   }
 
